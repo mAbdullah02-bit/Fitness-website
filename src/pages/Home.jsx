@@ -81,8 +81,8 @@ function Home() {
 
 </div>
 
-<div className=' flex  '>
-<div className='h-[500px] bg-[#1f1f1f] w-full relative '>
+<div className=' grid grid-cols-2 '>
+<div className=' bg-[#1f1f1f]  relative '>
 
 <h1 className=' text-white uppercase font-popins font-extrabold text-3xl text-wrap m-5 absolute top-[120px] left-[60px]'>Built to bring<br />
 best results</h1>
@@ -99,7 +99,7 @@ best results</h1>
             <FaArrowRight className="absolute right-3 bottom-4 transform transition-transform duration-300 ease-in-out group-hover:translate-x-2" />
         </button>
 </div>
-<div className='h-[500px] w-full bg-center'><img src="/images/oldmangym.jpg" alt="" /></div>
+<div className=' bg-center'><img src="/images/oldmangym.jpg" alt="" /></div>
 
 </div>
 
