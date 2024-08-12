@@ -82,7 +82,7 @@ function Home() {
 </div>
 
 <div className=' flex  '>
-<div className='h-[500px] bg-[#1f1f1f] w-[1020px] relative '>
+<div className='h-[500px] bg-[#1f1f1f] w-full relative '>
 
 <h1 className=' text-white uppercase font-popins font-extrabold text-3xl text-wrap m-5 absolute top-[120px] left-[60px]'>Built to bring<br />
 best results</h1>
