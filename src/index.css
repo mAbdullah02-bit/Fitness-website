@@ -1,3 +1,67 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.slider-container {
+    position: relative;
+  }
+  
+  .slider-track {
+    display: flex;
+    animation: scroll 10s linear infinite;
+  }
+  
+  .slider-track img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  .product-card {
+    text-align: center;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    width: 200px; /* Adjust width as needed */
+    margin-bottom: 20px; /* Space between image and text */
+}
+
+.image-container img {
+    width: 100%;
+    display: block;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.add-to-cart-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ff4c4c;
+    color: white;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.image-container:hover .add-to-cart-btn {
+    opacity: 1;
+}
+
+.image-container:hover img {
+    opacity: 0.8;
+}
