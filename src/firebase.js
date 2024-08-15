@@ -39,30 +39,3 @@ export const getproduct = async (id) => {
   }
 };
 
-
-const useFirebase = create((set) => ({
-  productlist: [],
-  product: null,
-  loading: false,
-  error: null,
-
-  fetchProductlist: async () => {
-    set({ loading: true, error: null });
-    try {
-      const collectionRef = collection(db, 'products');
-      const snapshot = await getDocs(collectionRef);
-      const productlist = snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data()
-      }));
-      set({ products, loading: false });
-    } catch (error) {
-      set({ error: error.message, loading: false });
-    }
-  },
-
-
-}));
-
-export default useFirebase;
-

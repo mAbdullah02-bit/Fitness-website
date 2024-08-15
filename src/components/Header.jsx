@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useActionData } from 'react-router-dom';
 import { BiCart } from 'react-icons/bi';
 import { useCartStore } from '../store/cart-store';
+
 function Header() {
+
   const [scrolled, setScrolled] = useState(false);
 const cart=useCartStore((state)=>state.cart)
   const handleScroll = () => {
@@ -81,13 +83,13 @@ const cart=useCartStore((state)=>state.cart)
           </Link>
           <Link
             to="/cart"
-            className={`transition hover:duration-300 text-xl flex ${
+            className={`transition hover:duration-300 text-xl flex relative ${
               scrolled ? 'hover:text-red-800' : 'hover:text-red-800'
             }`}
           >
             <BiCart className='text-2xl' /> 
-          <p className='text-[0.8rem] px-1 py-0 font-extralight bg-red-800  rounded-full text-center text-white hover:text-white'>{cart.length}</p>
-          </Link>
+         {cart.length>0? <span className='absolute top-2/3 right-1/2 text-sm w-5 h-5 font-extralight bg-red-800  rounded-full text-center text-white hover:text-white'>{cart.length}</span>
+ :null} </Link>
         </nav>
       </div>
     </header>

@@ -11,6 +11,7 @@ import { useCartStore } from './store/cart-store';
 import ReviewForm from './components/Reviews';
 import Details from './components/Details';
 import Size from './components/Size';
+import NotFound from './pages/Notfound';
 function App() {
   const setCart = useCartStore((state) => state.setCart);
 
@@ -37,6 +38,7 @@ function App() {
             
             </Route>
           </Route>
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
