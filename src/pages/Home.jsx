@@ -30,8 +30,8 @@ function Home() {
   
 
   const productElements = (
-    <div className="grid grid-cols-4 gap-8 m-10 py-40">
-    {products.map((product) => (
+    <div className="grid grid-cols-4 gap-8 m-10 py-20">
+    {products.filter(product=>product.category === "clothing").map((product) => (
       <div key={product.id} className="text-center relative group">
         <img 
           src={product.image} 
@@ -278,10 +278,10 @@ best results</h1>
 </div>
 
 
-<div className=' h-screen bg-black'>
+<div className=' h- bg-black'>
 
     <div className='text-white text-center m-10' > 
-<h1 className=' text-4xl font-extrabold m-5'>Supplements</h1>
+<h1 className=' text-4xl font-extrabold m-5 uppercase'>Our Products</h1>
 <p className='text-gray-500'>High Quality Suplements on industry standard made from quality and authantic ingredients. Best in Market . </p>
     </div>
 

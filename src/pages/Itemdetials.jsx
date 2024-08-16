@@ -112,33 +112,34 @@ function ItemDetails() {
 
       {/* Mini Nav Bar */}
       <div className="border-t border-gray-200 pt-6">
-        <nav className="text-black space-x-8 font-semibold">
-          <Link
-            to="details"
-            className={`hover:text-red-700 ${
-              location.pathname.includes("details") ? "text-red-700" : ""
-            }`}
-          >
-            Details
-          </Link>
-          <Link
-            to="size"
-            className={`hover:text-red-700 ${
-              location.pathname.includes("size") ? "text-red-700" : ""
-            }`}
-          >
-            Additional Info
-          </Link>
-          <Link
-            to="reviews"
-            className={`hover:text-red-700 ${
-              location.pathname.includes("reviews") ? "text-red-700" : ""
-            }`}
-          >
-            Reviews
-          </Link>
-        </nav>
-      </div>
+  <nav className="text-black space-x-8 font-semibold">
+    <Link
+      to="."
+      
+      className={`hover:text-red-700 ${
+        location.pathname === " " ? "text-red-700" : ""
+      }`}
+    >
+      Details
+    </Link>
+    <Link
+      to="size"
+      className={`hover:text-red-700 ${
+        location.pathname.includes("size") ? "text-red-700" : ""
+      }`}
+    >
+      Additional Info
+    </Link>
+    <Link
+      to="reviews"
+      className={`hover:text-red-700 ${
+        location.pathname.includes("reviews") ? "text-red-700" : ""
+      }`}
+    >
+      Reviews
+    </Link>
+  </nav>
+</div>
 
       {/* Outlet for Additional Info/Reviews */}
       <div className="mr-0 sm:mr-40 mb-10 mt-20 p-5 rounded-md shadow-md">
@@ -164,13 +165,13 @@ function ItemDetails() {
                 />
                 <div
                   onClick={() => addtoCart(item)}
-                  className="rounded-md cursor-pointer h-10 w-full absolute top-40 left-0 sm:left-1/3 md:left-1/4 lg:left-1/3 flex items-center justify-center bg-red-500 text-white font-bold text-lg uppercase opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
+                  className="rounded-md cursor-pointer h-10 w-auto text-nowrap p-5 absolute top-40 left-0 sm:left-12 md:left-1/4 lg:left-24 flex items-center justify-center bg-red-500 text-white font-bold text-lg uppercase opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
                 >
                   ADD TO CART
                 </div>
                 <div
                   onClick={() => handleViewDetails(item.id)}
-                  className="rounded-md cursor-pointer h-10 w-full absolute top-20 left-0 sm:left-1/3 md:left-1/4 lg:left-1/3 flex items-center justify-center bg-black text-white font-bold text-lg uppercase opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
+                  className="text-nowrap rounded-md cursor-pointer h-10 w-auto p-5 absolute top-20 left-0 sm:left-12 md:left-1/4 lg:left-24 flex items-center justify-center bg-black text-white font-bold text-lg uppercase opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
                 >
                   View Details
                 </div>

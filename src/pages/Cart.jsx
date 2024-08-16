@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import './Cart.css';
 import { useCartStore } from '../store/cart-store';
 import { Link } from 'react-router-dom';
+import { useNavigate,useSearchParams } from 'react-router-dom';
 const Cart = () => {
+const searchParams=useSearchParams()
+  const navigate=useNavigate()
   const { cart, quantities, removeFromCart, clearCart, updateQuantities } = useCartStore((state) => ({
     cart: state.cart,
     quantities: state.quantities,
@@ -33,7 +36,9 @@ const Cart = () => {
     };
     updateQuantities(newQuantities);
   };
-
+  const handleViewDetails = (productId) => {
+    navigate(`/shop/product/${productId}?${searchParams.toString()}`);
+  };
   return (
     <div className="cart-container -m-5">
       {/* Header Section with CART Title */}
@@ -65,7 +70,7 @@ const Cart = () => {
                   <tr key={item.id}>
                     <td className="product-cell">
                       <img src={item.image} alt={item.name} className="product-image" />
-                      <Link to='shop/:id' className='hover:text-red-800 hover:font-semibold'>{item.name}</Link>
+                      <div  onClick={() => handleViewDetails(item.id)} className= ' cursor-pointer hover:text-red-800 hover:font-semibold'>{item.name}</div>
                     </td>
                     <td>${Number(item.price).toFixed(2)}</td>
                     <td>

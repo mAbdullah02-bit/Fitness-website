@@ -12,6 +12,7 @@ import ReviewForm from './components/Reviews';
 import Details from './components/Details';
 import Size from './components/Size';
 import NotFound from './pages/Notfound';
+import BMICalculator from './pages/BMICalculator';
 function App() {
   const setCart = useCartStore((state) => state.setCart);
 
@@ -29,11 +30,12 @@ function App() {
           <Route index element={<Home />} />
           <Route path="about" element={<AboutUs />} />
           <Route path="cart" element={<Cart />} />
+          <Route path="bmi" element={<BMICalculator />} />
           <Route path="shop" element={<ShopLayout />}>
             <Route index element={<Shop />} />
             <Route path="product/:id" element={<ItemDetails />} >
+            <Route index  element={<Details/>}/>
             <Route path='reviews'  element={<ReviewForm/>}/>
-            <Route path='details'  element={<Details/>}/>
             <Route path='size'  element={<Size/>}/>
             
             </Route>
