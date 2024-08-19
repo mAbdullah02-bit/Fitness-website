@@ -94,10 +94,10 @@ function Home() {
 </div>
 
 </div>
-<div className=' flex gap-8 mx-[70px] m-20'>
+<div className=' flex gap-8 align-middle justify-center m-20'>
 
 
-<div className=' h-[150px] w-[200px] text-white justify-center text-center m-5 relative'>
+<div className=' h-[150px] w-[200px] text-white  text-center m-5 '>
 <img src="/images/dumbell.png" alt="" className='mx-auto' />
 <h1 className='text-nowrap '>Quality Equipment</h1>
 <h2 className='text-sm font-light text-gray-400'>Experience top-quality, durable 

@@ -6,9 +6,9 @@ const AboutUs = () => {
     <div className="about-us">
       {/* About Us Section */}
       <section className="bg-no-repeat  bg-cover bg-center bg-fixed text-white " style={{ backgroundImage: "url('http://localhost:5173/images/oldmangym.jpg')" }}>
-        <div className="container ">
+        <div className=" ">
           <h2 className="text-5xl font-extrabold  py-20 p-20 ">ABOUT US</h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-60 bg-gray-900 w-[1280px] p-10  text-center">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-60 bg-gray-900 w-auto p-10  text-center">
             <div className="feature  ">
               <img src="/images/dumbell.png" alt="" className='mx-auto'/>
               <h3 className="text-xl font-semibold mt-4">Quality Equipment</h3>
