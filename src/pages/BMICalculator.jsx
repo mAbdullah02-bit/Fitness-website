@@ -31,46 +31,16 @@ const BMICalculator = () => {
 
   return (
     <>
-      <div className="bg-red-500">
+      <div className="bg-red-500 h-[1000px]">
         <div className="bg-[url('https://images.pexels.com/photos/4325466/pexels-photo-4325466.jpeg?auto=compress&cs=tinysrgb&w=400')] bg-no-repeat bg-center bg-cover h-[400px] w-auto bg-fixed text-white">
           <h1 className="text-5xl text-white font-extrabold p-40">BMI CALCULATOR</h1>
         </div>
 
-        <div className="grid grid-cols-2 p-20 ">
+        <div className="grid grid-cols-2 p-16 gap-2 ">
           {/* BMI Chart */}
-          <div className="w-full lg:w-1/2 bg-white p-6 rounded-lg shadow-md">
-            <h2 className="text-2xl font-bold mb-4">BMI Calculator Chart</h2>
-            <table className="w-full text-left">
-              <thead>
-                <tr>
-                  <th className="border-b py-2">BMI</th>
-                  <th className="border-b py-2">Weight Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td className="py-2">Below 18.5</td>
-                  <td className="py-2">Underweight</td>
-                </tr>
-                <tr>
-                  <td className="py-2">18.5 - 24.9</td>
-                  <td className="py-2">Healthy</td>
-                </tr>
-                <tr>
-                  <td className="py-2">25.0 - 29.9</td>
-                  <td className="py-2">Overweight</td>
-                </tr>
-                <tr>
-                  <td className="py-2">30.0 and Above</td>
-                  <td className="py-2">Obese</td>
-                </tr>
-              </tbody>
-            </table>
-            <p className="mt-4 text-sm text-gray-500">* BMI: Body Mass Index</p>
-          </div>
-
+         
           {/* BMI Calculator */}
-          <form onSubmit={calculateBMI} className="space-y-6">
+          <form onSubmit={calculateBMI} className="space-y-8">
             <div className="grid grid-cols-2 gap-4">
               <input
                 type="number"
@@ -134,8 +104,40 @@ const BMICalculator = () => {
               <span className="ml-2">➔</span>
             </button>
           </form>
-          {bmi && (
-            <div className="mt-6 p-4 bg-gray-100 rounded-lg shadow ">
+
+          <div className="w-full absolute right-5 sm:w-[300px] lg:w-1/3 bg-white p-6 rounded-lg shadow-md">
+            <h2 className="text-2xl font-bold mb-4">BMI Calculator Chart</h2>
+            <table className="w-full text-left">
+              <thead>
+                <tr>
+                  <th className="border-b py-2">BMI</th>
+                  <th className="border-b py-2">Weight Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="py-2">Below 18.5</td>
+                  <td className="py-2">Underweight</td>
+                </tr>
+                <tr>
+                  <td className="py-2">18.5 - 24.9</td>
+                  <td className="py-2">Healthy</td>
+                </tr>
+                <tr>
+                  <td className="py-2">25.0 - 29.9</td>
+                  <td className="py-2">Overweight</td>
+                </tr>
+                <tr>
+                  <td className="py-2">30.0 and Above</td>
+                  <td className="py-2">Obese</td>
+                </tr>
+              </tbody>
+            </table>
+            <p className="mt-4 text-sm text-gray-500">* BMI: Body Mass Index</p>
+          </div>
+
+          {bmi &&  (
+            <div className="mt-6   text-center  pt-4 bg-gray-100 rounded-lg shadow-lg absolute top-[800px] w-1/3 h-1/5 ">
               <h3 className="text-xl font-bold mb-2">Your BMI Results:</h3>
               <p className="text-lg">BMI: <span className="font-semibold">{bmi}</span></p>
               <p className="text-lg">Category: <span className="font-semibold">{category}</span></p>

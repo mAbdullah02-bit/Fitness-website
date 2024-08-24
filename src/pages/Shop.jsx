@@ -80,6 +80,12 @@ function Shop() {
                 onClick={() => setCategory('supplement')}
                 className="block mb-2 text-left hover:text-red-500"
               >
+                All Products
+              </button>
+              <button
+                onClick={() => setCategory('supplement')}
+                className="block mb-2 text-left hover:text-red-500"
+              >
                 Supplements
               </button>
               <button
@@ -104,6 +110,12 @@ function Shop() {
           <div className="hidden lg:block lg:w-1/4 p-10 lg:pl-10 lg:pr-10 border-2 text-black">
             <div className="sticky top-20">
               <h1 className="text-2xl font-bold mb-4">Categories</h1>
+              <button
+                onClick={() => setCategory('')}
+                className="block mb-2 text-left hover:text-red-500"
+              >
+                All Products
+              </button>
               <button
                 onClick={() => setCategory('supplement')}
                 className="block mb-2 text-left hover:text-red-500"

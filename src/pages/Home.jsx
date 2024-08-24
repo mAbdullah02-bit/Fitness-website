@@ -32,7 +32,7 @@ function Home() {
   const productElements = (
     <div className="md:grid md:grid-cols-4 gap-8 grid grid-cols-2 m-10 py-20 ">
     {products.filter(product=>product.category === "clothing").map((product) => (
-      <div key={product.id} className="text-center relative group border-[1px]  pt-4 p-2">
+      <div key={product.id} className="text-center relative group   pt-4 p-2">
         <img 
           src={product.image} 
           alt={product.name} 
@@ -142,9 +142,9 @@ function Home() {
 
 
 </div>
-<div className="grid grid-cols-1 sm:grid-cols-2 h-auto w-full">
+<div className="grid grid-cols-1  sm:grid-cols-2 h-auto w-full">
   {/* Content section */}
-  <div className="relative p-5 sm:p-0 sm:bg-[#1f1f1f]"> {/* Background removed for small screens */}
+  <div className="relative p-5 sm:p-0 sm:bg-[#1f1f1f] "> {/* Background removed for small screens */}
     <h1 className="text-white uppercase font-popins font-extrabold text-2xl sm:text-3xl leading-tight sm:leading-normal m-5 absolute sm:top-[120px] sm:left-[60px] top-16 left-5">
       Built to bring<br />
       best results
@@ -163,16 +163,16 @@ function Home() {
 
   {/* Image section */}
   <div className="relative">
-    <img src="/images/oldmangym.jpg" alt="Gym" className="w-full h-full object-cover" />
+    <img src="/images/oldmangym.jpg" alt="Gym" className="w-full lg:h-[600px] object-cover" />
 
     {/* Overlay and text only for small screens */}
     <div className="sm:hidden absolute inset-0 bg-black opacity-50"></div>
     <div className="sm:hidden absolute inset-0 flex flex-col justify-center items-start p-5">
-      <h1 className="text-white uppercase font-popins font-extrabold text-2xl leading-tight mb-4">
+      <h1 className="text-white uppercase lg:text-3xl  font-popins font-extrabold text-2xl leading-tight mb-4">
         Built to bring<br />
         best results
       </h1>
-      <h3 className="text-gray-300 font-extralight mb-6 text-base">
+      <h3 className="text-gray-300 font-extralight lg:text-xl mb-6 text-base">
         Tune up your shoulders, legs, and lower back. Choose a workout that can improve your balance,
         strength, and overall condition. Our team of experts will follow you through the whole workout
         process. Your body will thank you.
@@ -188,7 +188,8 @@ function Home() {
 
 
 
-<div className="bg-[url('https://images.pexels.com/photos/17840/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-no-repeat bg-cover bg-fixed bg-center">
+<div className="bg-[url('https://images.pexels.com/photos/17840/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] 
+bg-no-repeat bg-cover bg-fixed bg-center ">
 
 <Swiper
             navigation={true}
@@ -241,23 +242,24 @@ function Home() {
 
 </div>
 
-<div className='bg-[#0f0f0f] p-20 h-auto'>
+<div className='bg-[#1f1f1f] p-20 h-auto '>
   <div className='flex justify-between'>
     <h1 className='text-white  uppercase font-popins font-bold sm:font-extrabold sm:text-3xl text-md text-wrap'>
       Choose your <br />
       pricing plan
     </h1>
 
-    <button className="relative sm:my-2 sm:pr-02 bg-[#f04b37] rounded-sm overflow-hidden 
-    flex text-white  pr-10 p-2 transition-all font-bold duration-300 ease-in-out hover:bg-[#e43e2c] group">
+    <button className="relative sm:my-2 lg:pr-14 lg:p-4  sm:pr-02 bg-[#f04b37] 
+    rounded-sm overflow-hidden flex text-white  pr-10 p-2 
+    transition-all font-bold duration-300 ease-in-out hover:bg-[#e43e2c] group">
       Read More 
   
-      <FaArrowRight className="-mx-5 absolute sm:right-10 sm:top-5 right-8 top-3 transform transition-transform duration-300 ease-in-out group-hover:translate-x-2" />
+      <FaArrowRight className="-mx-5 absolute sm:right-10 sm:top-5 lg:top-1/10 right-8 top-3 transform transition-transform duration-300 ease-in-out group-hover:translate-x-2" />
     </button>
   </div>
 
-  <div className='bg-[#0f0f0f11] sm:my-40 my-10 space-y-10 text-white uppercase sm:flex'>
-    <div className='bg-[#0a0909] relative rounded-md sm:w-1/3 h-[450px] text-center'>
+  <div className='bg-[#0f0f0f11] sm:my-40 my-10 sm:space-y-0 space-y-10 gap-5 text-white uppercase sm:flex'>
+    <div className='bg-[#0a0909] hover:border-[3px] border-red-600 scale-100 hover:scale-110 ease-in duration-500 relative rounded-md sm:w-1/3 h-[450px] text-center hover:'>
       <h1 className='p-5 text-4xl font-bold relative'>
         <span className='relative -top-5 text-sm'>$</span>33
       </h1>                          
@@ -275,7 +277,7 @@ function Home() {
       </button>
     </div>
 
-    <div className='bg-[#0a0909] relative rounded-md  sm:w-1/3 h-[450px] text-center'>
+    <div className='bg-[#0a0909] hover:border-[3px] border-red-600 relative scale-100 hover:scale-110 ease-in duration-500 rounded-md  sm:w-1/3 h-[450px] text-center'>
       <h1 className='p-5 text-4xl font-bold relative'>
         <span className='relative -top-5 text-sm'>$</span>49
       </h1>
@@ -293,7 +295,7 @@ function Home() {
       </button>
     </div>
 
-    <div className='bg-[#0a0909] relative rounded-md  sm:w-1/3 h-[450px] text-center'>
+    <div className='bg-[#0a0909] hover:border-[3px] border-red-600 relative scale-100 hover:scale-110 ease-in duration-500 rounded-md  sm:w-1/3 h-[450px] text-center'>
       <h1 className='p-5 text-4xl font-bold relative'>
         <span className='relative -top-5 text-sm'>$</span>99
       </h1>
