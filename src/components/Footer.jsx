@@ -21,8 +21,6 @@ const Footer = () => {
       <div style={styles.container}>
         <div style={styles.leftSection}>
           <Link style={styles.logoSection} to='home'>
-            {/* Replace the div below with your logo */}
-           
             <img src="/images/logo.png" alt="Logo" style={styles.logoImage} />
           </Link>
 
@@ -33,7 +31,7 @@ const Footer = () => {
             </p>
           </div>
 
-          <div style={styles.socialSection} className='space-x-11 '>
+          <div style={styles.socialSection}>
             <a href="https://www.facebook.com" style={styles.socialIcon} aria-label="Facebook">
               <FaFacebookF />
             </a>
@@ -88,52 +86,51 @@ const styles = {
     backgroundColor: '#1a1a1a',
     color: '#ffffff',
     padding: '20px 0',
+    fontSize: '14px',
   },
   container: {
     display: 'flex',
-    justifyContent: 'space-between',
+    flexDirection: 'column',
+    alignItems: 'center',
     maxWidth: '1200px',
     margin: '0 auto',
     padding: '0 20px',
+    gap: '20px',
   },
   leftSection: {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'flex-start',
-    maxWidth: '600px',
+    alignItems: 'center',
+    textAlign: 'center',
+    gap: '20px',
   },
   rightSection: {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'flex-end',
+    alignItems: 'center',
+    textAlign: 'center',
+    gap: '10px',
   },
   logoSection: {
-    marginBottom: '15px',
-  },
-  logoPlaceholder: {
-    fontSize: '24px',
-    fontWeight: 'bold',
-    textTransform: 'uppercase',
+    marginBottom: '10px',
   },
   logoImage: {
-    width: '120px',
-    marginTop: '10px',
+    width: '100px',
   },
   infoSection: {
-    marginBottom: '15px',
+    marginBottom: '10px',
   },
   infoText: {
-    fontSize: '16px',
+    fontSize: '14px',
   },
   socialSection: {
     display: 'flex',
-    justifyContent: 'flex-start',
-    gap: '15px',
+    justifyContent: 'center',
+    gap: '10px',
   },
   socialIcon: {
     color: '#ffffff',
-    fontSize: '20px',
+    fontSize: '18px',
     transition: 'color 0.3s ease',
     textDecoration: 'none',
   },
@@ -141,18 +138,19 @@ const styles = {
     color: '#ff6600',
   },
   messageHeader: {
-    fontSize: '18px',
+    fontSize: '16px',
     marginBottom: '10px',
   },
   input: {
-    width: '250px',
+    width: '100%',
+    maxWidth: '300px',
     padding: '10px',
     margin: '5px 0',
     border: '1px solid #ffffff',
     borderRadius: '5px',
     backgroundColor: '#333333',
     color: '#ffffff',
-    fontSize: '16px',
+    fontSize: '14px',
   },
   sendButton: {
     backgroundColor: '#ff6600',
@@ -161,7 +159,7 @@ const styles = {
     border: 'none',
     borderRadius: '5px',
     cursor: 'pointer',
-    fontSize: '16px',
+    fontSize: '14px',
     transition: 'background-color 0.3s ease',
     marginTop: '10px',
   },
@@ -170,7 +168,7 @@ const styles = {
   },
   thankYouMessage: {
     marginTop: '10px',
-    fontSize: '14px',
+    fontSize: '12px',
     color: '#00cc00',
   },
   fullWidthContainer: {
@@ -180,9 +178,39 @@ const styles = {
     marginTop: '20px',
   },
   copyright: {
-    fontSize: '14px',
+    fontSize: '12px',
     textAlign: 'center',
     color: '#ffffff',
+  },
+  '@media (max-width: 640px)': {
+    footer: {
+      fontSize: '12px',
+    },
+    logoImage: {
+      width: '80px',
+    },
+    infoText: {
+      fontSize: '12px',
+    },
+    socialIcon: {
+      fontSize: '16px',
+    },
+    messageHeader: {
+      fontSize: '14px',
+    },
+    input: {
+      maxWidth: '100%',
+    },
+    sendButton: {
+      fontSize: '12px',
+      padding: '8px 16px',
+    },
+    thankYouMessage: {
+      fontSize: '10px',
+    },
+    copyright: {
+      fontSize: '10px',
+    },
   },
 };
 
