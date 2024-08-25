@@ -4,7 +4,7 @@ import './NotFound.css'; // Import custom CSS
 
 function NotFound() {
   return (
-    <div className="not-found-page bg-[url('https://images.pexels.com/photos/3747132/pexels-photo-3747132.jpeg?auto=compress&cs=tinysrgb&w=400')] bg-no-repeat bg-cover">
+    <div className="not-found-page bg-[url('https://images.pexels.com/photos/26455239/pexels-photo-26455239/free-photo-of-dolphin-swimming-in-blue-water.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load')] bg-no-repeat bg-cover">
       <div className="content-wrapper">
         <div className="error-text">
           <h1>404</h1>

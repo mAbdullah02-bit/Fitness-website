@@ -64,7 +64,9 @@ function ItemDetails() {
           <img
             src={product.image}
             alt={product.name}
-            className="h-[300px] sm:h-[400px] w-auto shadow-lg rounded-lg mb-10 lg:mb-0 object-cover"
+            className="h-[300px] sm:h-[400px] w-auto shadow-lg rounded-lg mb-10 lg:mb-0
+             object-cover lg:hover:scale-[160%] md:hover:scale-[150%] sm:hover:scale-[140%] hover:scale-[140%]
+               lg:hover:translate-x-20 md:hover:translate-x-20  hover:translate-x-10 transition ease-in-out  cursor-zoom-in"
           />
         </div>
 
@@ -161,18 +163,19 @@ function ItemDetails() {
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="mx-auto mb-4 w-full h-60 object-contain transition-opacity duration-300 ease-in-out group-hover:opacity-25"
+                  className="mx-auto mb-4 w-full h-60 object-contain transition-opacity
+                   duration-300 ease-in-out group-hover:opacity-25"
                 />
                 <div
                   onClick={() => addtoCart(item)}
-                  className="rounded-md cursor-pointer h-10 w-auto text-nowrap p-5 absolute top-40 left-0 sm:left-12 md:left-1/4 lg:left-24 flex items-center justify-center bg-red-500 text-white font-bold text-lg uppercase opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
-                >
+                  className="rounded-md cursor-pointer h-10 w-auto text-nowrap p-5 absolute top-40 left-1/2 transform -translate-x-1/2 flex items-center justify-center bg-red-500 text-white font-bold text-lg uppercase opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
+                  >
                   ADD TO CART
                 </div>
                 <div
                   onClick={() => handleViewDetails(item.id)}
-                  className="text-nowrap rounded-md cursor-pointer h-10 w-auto p-5 absolute top-20 left-0 sm:left-12 md:left-1/4 lg:left-24 flex items-center justify-center bg-black text-white font-bold text-lg uppercase opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
-                >
+                  className="text-nowrap rounded-md cursor-pointer h-10 w-auto p-5 absolute top-20 left-1/2 transform -translate-x-1/2 flex items-center justify-center bg-black text-white font-bold text-lg uppercase opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
+                  >
                   View Details
                 </div>
                 <h1 className="text-black font-bold text-lg">{item.name}</h1>

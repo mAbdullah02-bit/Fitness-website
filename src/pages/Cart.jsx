@@ -42,20 +42,21 @@ const searchParams=useSearchParams()
   return (
     <div className="cart-container -m-5">
       {/* Header Section with CART Title */}
-      <div className="cart-header bg-[url('https://images.pexels.com/photos/6240366/pexels-photo-6240366.jpeg?auto=compress&cs=tinysrgb&w=400')] bg-no-repeat bg-cover bg-fixed">
+      <div className="cart-header bg-[url('https://prowess.qodeinteractive.com/wp-content/uploads/2018/02/shop-title-img-1.jpg')] bg-no-repeat bg-cover bg-fixed">
         <div className="cart-header-text font-extrabold m-20">CART</div>
       </div>
 
       {cart.length === 0 ? (
-        <div className="cart-empty h-full m-40 justify-center text-center relative">
+        <div className="cart-empty h-full lg:m-40 justify-center text-center  m-10 ">
           <hr />
-          <p className="empty-message text-4xl m-10 font-bold font-popins">YOUR CART IS CURRENTLY EMPTY.</p>
+          <p className="empty-message lg:text-4xl text-xl m-10 font-bold font-popins">YOUR CART IS CURRENTLY EMPTY.</p>
           <hr />
-          <a href="/shop" className="return-link bg-red-600 p-2 absolute -bottom-20 left-[400px] hover:bg-red-900 text-white rounded">Return to shop</a>
+          <a href="/shop" className="return-link bg-red-600 p-4   
+        left-1/2  hover:bg-red-900 text-white rounded">Return to shop</a>
         </div>
       ) : (
         <>
-          <div className="cart-items p-10">
+          <div className="cart-items xl:px-60 p-10">
             <table className="cart-table">
               <thead>
                 <tr>
@@ -92,30 +93,30 @@ const searchParams=useSearchParams()
             </table>
           </div>
 
-          <div className="cart-actions p-10">
+          <div className="cart-actions p-10 xl:px-60">
             <div className="coupon-section">
               <input 
                 type="text" 
                 value={couponCode} 
                 onChange={(e) => setCouponCode(e.target.value)} 
                 placeholder="Coupon code"
-                className="coupon-input"
+                className="coupon-input text-nowrap w-[150px]"
               />
-              <button onClick={handleCouponApply} className="apply-coupon">APPLY COUPON</button>
+              <button onClick={handleCouponApply} className="bg-red-600 text-white p-0 text-nowrap w-[100px] text-sm">APPLY </button>
             </div>
-            <button className="update-cart">UPDATE CART</button>
-            <button onClick={clearCart} className="clear-cart bg-red-600 text-white p-2 rounded">CLEAR CART</button>
+    
+            <button onClick={clearCart} className="clear-cart bg-red-600 text-white p-2 rounded text-nowrap  text-sm">CLEAR CART</button>
           </div>
 
-          <div className="cart-totals p-10">
+          <div className="cart-totals p-10 xl:px-60">
             <h2>CART TOTALS</h2>
-            <div className="totals-row">
+            <div className="totals-row ">
               <span>Subtotal</span>
               <span>${calculateSubtotal().toFixed(2)}</span>
             </div>
             <div className="totals-row">
               <span>Shipping</span>
-              <div className="shipping-options">
+              <div className="shipping-options ">
                 <label>
                   <input 
                     type="radio" 

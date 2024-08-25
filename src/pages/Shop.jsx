@@ -34,7 +34,7 @@ function Shop() {
   };
 
   const productElements = (productsToShow) => (
-    <div className="grid md:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-8 m-10 py-40">
+    <div className="grid md:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-8 m-10 py-20">
       {productsToShow.map((product) => (
         <div key={product.id} className="text-center relative group border-2 shadow-sm p-4">
           <img
@@ -44,15 +44,15 @@ function Shop() {
           />
           <div
             onClick={() => addtoCart(product)}
-            className="rounded-md cursor-pointer h-10 w-[160px] absolute top-40 left-1/3 md:left-8 md:w-[100px] sm:w-[180px] sm:left-16 md:text-sm lg:left-14 lg:w-[150px] inset-0 flex items-center justify-center bg-red-500 text-white font-bold text-lg uppercase opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
-          >
+            className="rounded-md cursor-pointer h-10 w-auto text-nowrap p-5 absolute top-40 left-1/2 transform -translate-x-1/2 flex items-center justify-center bg-red-500 text-white font-bold text-lg uppercase opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
+            >
             ADD TO CART
           </div>
           <Link
             to={`product/${product.id}`}
             state={{ search: searchParams.toString() }}
-            className="rounded-md cursor-pointer h-10 w-[160px] absolute top-20 left-1/3 md:left-8 md:w-[100px] sm:w-[180px] sm:left-16 md:text-sm lg:left-14 lg:w-[150px] inset-0 flex items-center justify-center bg-black text-white font-bold text-lg uppercase opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
-          >
+            className="text-nowrap rounded-md cursor-pointer h-10 w-auto p-5 absolute top-20 left-1/2 transform -translate-x-1/2 flex items-center justify-center bg-black text-white font-bold text-lg uppercase opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
+            >
             View Details
           </Link>
           <h1 className="text-black font-bold text-lg">{product.name}</h1>
@@ -77,7 +77,7 @@ function Shop() {
           {showCategories && (
             <div className="bg-gray-100 text-black p-5 space-y-5">
               <button
-                onClick={() => setCategory('supplement')}
+                onClick={() => setCategory('')}
                 className="block mb-2 text-left hover:text-red-500"
               >
                 All Products
@@ -108,7 +108,7 @@ function Shop() {
         <div className="flex flex-col lg:flex-row">
           {/* Categories Section for Large Devices */}
           <div className="hidden lg:block lg:w-1/4 p-10 lg:pl-10 lg:pr-10 border-2 text-black">
-            <div className="sticky top-20">
+            <div className="sticky top-20 pt-20">
               <h1 className="text-2xl font-bold mb-4">Categories</h1>
               <button
                 onClick={() => setCategory('')}
@@ -140,10 +140,11 @@ function Shop() {
           {/* Product Grid */}
           <div className="w-full lg:w-3/4">
             {/* Display Header */}
-            <h1 className="text-3xl font-bold text-center mb-6 text-black absolute top-10 left-96">
+            <hr className=' mt-5 '/>
+            <h1 className="text-3xl font-bold text-center mb-6 text-black  pt-5">
               {category ? `${category.charAt(0).toUpperCase() + category.slice(1)} Products` : 'All Products'}
             </h1>
-
+<hr />
             {/* Display Products */}
             {productElements(category ? filterProducts() : products)}
           </div>

@@ -79,8 +79,10 @@ function Home() {
  alt=""
  className=" object-left-bottom object-scale-down sm:size-[400px]   md:size-[500px] lg:size-[600px] opacity-0  bg-transparent z-0 rotate-180 size-[300px] absolute top-20 right-0 mx-auto"/>
 <div className='bg-local ' >
-    <h1 className=' tracking-[.40em] sm:text-xl  text-3xl text-orange-700 font-popins font-extrabold absolute top-[80px] left-[60px]'>STRONG</h1>
-<h2 className='text-white uppercase absolute top-[120px] sm:left-[120px] left-[60px] max-w-[300px]'>Beat the routine. Train at the Caliber of world Champions and get in the best shape of your life.</h2>
+    <h1 className=' tracking-[.40em] xl:text-6xl  lg:text-4xl  text-3xl text-orange-700 font-popins
+     font-extrabold absolute top-[80px] left-[60px] lg:top-[180px] lg:left-[180px] sm:left-[120px] '>STRONG</h1>
+<h2 className='text-white uppercase absolute top-[120px] 
+sm:left-[120px] left-[60px] max-w-[300px] lg:top-[240px] lg:min-w-[400px] xl:text-center xl:left-[180px] lg:text-center lg:left-[110px]'>Beat the routine. Train at the Caliber of world Champions and get in the best shape of your life.</h2>
 </div>
 
 </div>
