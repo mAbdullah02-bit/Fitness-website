@@ -13,6 +13,7 @@ import Details from './components/Details';
 import Size from './components/Size';
 import NotFound from './pages/Notfound';
 import BMICalculator from './pages/BMICalculator';
+import Classes from './pages/Classes';
 function App() {
   const setCart = useCartStore((state) => state.setCart);
 
@@ -30,6 +31,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="about" element={<AboutUs />} />
           <Route path="cart" element={<Cart />} />
+          <Route path="classes" element={<Classes />} />
           <Route path="bmi" element={<BMICalculator />} />
           <Route path="shop" element={<ShopLayout />}>
             <Route index element={<Shop />} />
