@@ -11,22 +11,22 @@ const AboutUs = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-60 bg-white w-auto p-20 text-black  text-center ">
             <div className="  ">
               <img src="/images/dumbell.png" alt="" className='mx-auto '/>
-              <h3 className="text-xl font-semibold mt-4hover:text-red-600">Quality Equipment</h3>
+              <h3 className="text-xl font-semibold mt-4 hover:text-red-600 cursor-pointer">Quality Equipment</h3>
               <p className="text-sm mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
             <div className="feature">
             <img src="/images/register.png" alt="" className='mx-auto' />
-              <h3 className="text-xl font-semibold mt-4 hover:text-red-600">Healthy Nutrition Plan</h3>
+              <h3 className="text-xl font-semibold mt-4 hover:text-red-600 cursor-pointer">Healthy Nutrition Plan</h3>
               <p className="text-sm mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
             <div className="feature">
             <img src="/images/shower.png" alt="" className='mx-auto' />
-              <h3 className="text-xl font-semibold mt-4 hover:text-red-600">Support Service</h3>
+              <h3 className="text-xl font-semibold mt-4 hover:text-red-600 cursor-pointer">Support Service</h3>
               <p className="text-sm mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
             <div className="feature">
             <img src="/images/Heart.png" alt="" className='mx-auto' />
-              <h3 className="text-xl font-semibold mt-4 hover:text-red-600">Unique To Your Needs</h3>
+              <h3 className="text-xl font-semibold mt-4 hover:text-red-600 cursor-pointer">Unique To Your Needs</h3>
               <p className="text-sm mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
           </div>

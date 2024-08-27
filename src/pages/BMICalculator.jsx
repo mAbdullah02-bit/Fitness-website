@@ -137,7 +137,7 @@ const BMICalculator = () => {
         
 
           {bmi &&  (
-            <div className="mt-6  md:w-60 text-center  pt-4 bg-red-600 text-white rounded-lg shadow-lg   ">
+            <div className="mt-6  md:w-40 text-center  pt-4 bg-red-600 text-white rounded-lg shadow-lg   ">
               <h3 className="text-xl font-bold mb-2">Your BMI Results:</h3>
               <p className="text-lg">BMI: <span className="font-semibold">{bmi}</span></p>
               <p className="text-lg">Category: <span className="font-semibold">{category}</span></p>

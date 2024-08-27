@@ -11,9 +11,11 @@ function Classes() {
       <div className="p-16 bg-white text-center">
         <h1 className="font-extrabold text-4xl">Training Programs</h1>
         <h2 className="mt-4 text-lg text-gray-600">
-          Lorem ipsum dolor sit amet, consectetuer adipiscing imperdiet elit.
-          Nean commodo ligula eget dolor. Cum sociis Theme natoque penatibus et
-          magnis dis.
+        Tune up your shoulders, legs, and lower back. Choose a 
+        workout that can improve your balance, strength,
+         and overall condition. Our team of experts
+         will follow you through the whole workout
+          process. Your body will thank you.
         </h2>
       </div>
 

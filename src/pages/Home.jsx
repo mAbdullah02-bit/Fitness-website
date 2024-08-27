@@ -7,11 +7,11 @@ import 'swiper/css/navigation';
 import { FaArrowRight } from "react-icons/fa";
 import { fetchProducts } from '../firebase';
 import { useCartStore } from '../store/cart-store';
+
 function Home() {
   const addtoCart=useCartStore((state)=>state.addtoCart)
   const [products,setProducts]=useState([])
-
-  
+ 
   
   useEffect(() => {
   
@@ -43,8 +43,9 @@ function Home() {
   onClick={() => addtoCart(product)}
   className="absolute inset-0 flex items-center justify-center"
 >
+
   <div
-    className="rounded-md cursor-pointer h-10 w-[70%] max-w-[180px] sm:max-w-[200px] 
+    className="rounded-md cursor-pointer h-10 w-auto p-5 max-w-[180px] sm:max-w-[200px] 
                bg-red-500 text-white font-bold text-lg uppercase opacity-0 
                transition-opacity duration-300 ease-in-out group-hover:opacity-100 
                flex items-center justify-center"
@@ -113,7 +114,7 @@ sm:left-[120px] left-[60px] max-w-[300px] lg:top-[240px] lg:min-w-[400px] xl:tex
 
 <div className=' h-[150px] w-[200px] text-white  text-center m-5 '>
 <img src="/images/dumbell.png" alt="" className='mx-auto' />
-<h1 className='text-nowrap '>Quality Equipment</h1>
+<h1 className='text-nowrap hover:text-red-600 cursor-pointer'>Quality Equipment</h1>
 <h2 className='text-sm font-light text-gray-400'>Experience top-quality, durable 
     fitness equipment for effective,
      reliable workouts. </h2>
@@ -121,19 +122,19 @@ sm:left-[120px] left-[60px] max-w-[300px] lg:top-[240px] lg:min-w-[400px] xl:tex
 
 <div className=' h-[150px] w-[200px] text-white justify-center text-center m-5 relative'>
 <img src="/images/register.png" alt="" className='mx-auto' />
-<h1 className='text-nowrap '>Healthy Nutrition Plan</h1>
+<h1 className='text-nowrap hover:text-red-600 cursor-pointer'>Healthy Nutrition Plan</h1>
 <h2 className='text-sm font-light text-gray-400'>Wholesome meals, balanced nutrition, 
     fueling your body for optimal health daily </h2>
 </div>
 <div className=' h-[150px] w-[200px] text-white justify-center text-center m-5 relative'>
 <img src="/images/shower.png" alt="" className='mx-auto' />
-<h1 className='text-nowrap '>Shower Service</h1>
+<h1 className='text-nowrap hover:text-red-600 cursor-pointer'>Shower Service</h1>
 <h2 className='text-sm font-light text-gray-400'>Refreshing showers, clean environment, 
     rejuvenating experience, start your day fresh.</h2>
 </div>
 <div className=' h-[150px] w-[200px] text-white justify-center text-center m-5 relative'>
 <img src="/images/Heart.png" alt="" className='mx-auto' />
-<h1 className='text-nowrap '>Unique to Your Needs</h1>
+<h1 className='text-nowrap hover:text-red-600 cursor-pointer'>Unique to Your Needs</h1>
 <h2 className='text-sm font-light text-gray-400'>
     Personalized showers, 
     tailored to your needs, 
@@ -268,9 +269,9 @@ bg-no-repeat bg-cover bg-fixed bg-center ">
       <h3 className='text-red-600 font-bold text-lg'>Single Class</h3>
       <h1 className='font-popins font-bold text-xl my-10'>Class Drop-In</h1>
       <p className='font-semilight text-gray-400'>
-        Lorem Ipsum Dolor Sit Amet <hr className='m-2' />
-        Aenean Massa <hr className='m-2' />
-        Quisque Rutrum
+      Single session every day for 1 month  <hr className='m-2' />
+        24/7 support <hr className='m-2' />
+       Free Locker
       </p>
       <button className="absolute bottom-10 left-[calc(50%-80px)] px-8 pr-14 bg-[#f04b37] rounded-sm overflow-hidden flex text-white p-3 transition-all duration-300 ease-in-out hover:bg-[#e43e2c] group">
         Read More
@@ -286,9 +287,9 @@ bg-no-repeat bg-cover bg-fixed bg-center ">
       <h3 className='text-red-600 font-bold text-lg'>Per Month</h3>
       <h1 className='font-popins font-bold text-xl my-10'>12 Month Unlimited</h1>
       <p className='font-semilight text-gray-400'>
-        Lorem Ipsum Dolor Sit Amet <hr className='m-2' />
-        Aenean Massa <hr className='m-2' />
-        Quisque Rutrum
+      Single session every day for 1 Year <hr className='m-2' />
+        24/7 support <hr className='m-2' />
+        Free Locker
       </p>
       <button className="absolute bottom-10 left-[calc(50%-80px)] px-8 pr-14 bg-[#f04b37] rounded-sm overflow-hidden flex text-white p-3 transition-all duration-300 ease-in-out hover:bg-[#e43e2c] group">
         Read More
@@ -304,9 +305,9 @@ bg-no-repeat bg-cover bg-fixed bg-center ">
       <h3 className='text-red-600 font-bold text-lg'>Single Class</h3>
       <h1 className='font-popins font-bold text-xl my-10'>6 Month Unlimited</h1>
       <p className='font-semilight text-gray-400'>
-        Lorem Ipsum Dolor Sit Amet <hr className='m-2' />
-        Aenean Massa <hr className='m-2' />
-        Quisque Rutrum
+       Single session every day for 6 month <hr className='m-2' />
+        24/7 support <hr className='m-2' />
+        Free Locker
       </p>
       <button className="absolute bottom-10 left-[calc(50%-80px)] px-8 pr-14 bg-[#f04b37] rounded-sm overflow-hidden flex text-white p-3 transition-all duration-300 ease-in-out hover:bg-[#e43e2c] group">
         Read More

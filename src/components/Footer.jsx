@@ -50,7 +50,7 @@ const Footer = () => {
         {/* New Section: Quick Links */}
         <div className="hidden xl:flex flex-col lg:items-center text-nowrap sm:hidden sm:items-start text-center sm:text-left space-y-2 mt-4">
           <h3 className="text-lg font-bold">Quick Links</h3>
-          <ul className='grid'>
+          <ul className='grid space-y-8'>
             <li><Link to="/workouts" className="hover:text-orange-500">Workouts</Link></li>
             <li><Link to="/nutrition" className="hover:text-orange-500">Nutrition</Link></li>
             <li><Link to="/trainers" className="hover:text-orange-500">Trainers</Link></li>

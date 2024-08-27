@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { BiCart } from 'react-icons/bi';
 import { useCartStore } from '../store/cart-store';
 import { IoReorderThreeSharp } from "react-icons/io5";
@@ -8,6 +8,7 @@ function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const cart = useCartStore((state) => state.cart);
+  const location = useLocation();
 
   const handleScroll = () => {
     const offset = window.scrollY;
@@ -26,6 +27,8 @@ function Header() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const isActive = (path) => location.pathname === path;
 
   return (
     <header
@@ -51,7 +54,7 @@ function Header() {
           <Link
             to="/"
             className={`transition hover:duration-300 mx-4 my-2 md:my-0 ${
-              scrolled ? 'text-black hover:text-red-800' : 'text-white hover:text-red-800'
+              isActive('/') ? 'text-red-800' : scrolled ? 'text-black hover:text-red-800' : 'text-white hover:text-red-800'
             }`}
           >
             Home
@@ -59,7 +62,7 @@ function Header() {
           <Link
             to="/classes"
             className={`transition hover:duration-300 mx-4 my-2 md:my-0 ${
-              scrolled ? 'text-black hover:text-red-800' : 'text-white hover:text-red-800'
+              isActive('/classes') ? 'text-red-800' : scrolled ? 'text-black hover:text-red-800' : 'text-white hover:text-red-800'
             }`}
           >
             Classes
@@ -67,7 +70,7 @@ function Header() {
           <Link
             to="/bmi"
             className={`transition hover:duration-300 mx-4 my-2 md:my-0  ${
-              scrolled ? 'text-black hover:text-red-800' : 'text-white hover:text-red-800'
+              isActive('/bmi') ? 'text-red-800' : scrolled ? 'text-black hover:text-red-800' : 'text-white hover:text-red-800'
             }`}
           >
             BMI Calc
@@ -75,7 +78,7 @@ function Header() {
           <Link
             to="/about"
             className={`transition hover:duration-300  mx-4 my-2 md:my-0 ${
-              scrolled ? 'text-black hover:text-red-800' : 'text-white hover:text-red-800'
+              isActive('/about') ? 'text-red-800' : scrolled ? 'text-black hover:text-red-800' : 'text-white hover:text-red-800'
             }`}
           >
             About Us
@@ -83,21 +86,20 @@ function Header() {
           <Link
             to="/shop"
             className={`transition hover:duration-300 mx-4 my-2 md:my-0 ${
-              scrolled ? 'text-black hover:text-red-800' : 'text-white hover:text-red-800'
+              isActive('/shop') ? 'text-red-800' : scrolled ? 'text-black hover:text-red-800' : 'text-white hover:text-red-800'
             }`}
           >
             Shop
           </Link>
         </nav>
 
-        {/* Cart Icon */}
+        {/* Cart and Menu Icons */}
         <div className="flex items-center space-x-4 mx-3">
-          {/* Toggle Menu Icon for smaller screens */}
-
+          {/* Cart Icon */}
           <Link
             to="/cart"
-            className={`transition hover:duration-300 text-xl flex relative  mx-0 my-2 md:my-0 ${
-              scrolled ? 'text-black hover:text-red-800' : 'text-white hover:text-red-800'
+            className={`transition hover:duration-300 text-xl flex relative mx-0 my-2 md:my-0 ${
+              isActive('/cart') ? 'text-red-800' : scrolled ? 'text-black hover:text-red-800' : 'text-white hover:text-red-800'
             }`}
           >
             <BiCart className="text-2xl" />
@@ -107,52 +109,62 @@ function Header() {
               </span>
             ) : null}
           </Link>
-            <IoReorderThreeSharp
-              className={`md:hidden text-2xl cursor-pointer mx-4 my-2 md:my-0 ${
-                scrolled ? 'text-black' : 'text-white'
-              }`}
-              onClick={toggleMenu}
-            />
+
+          {/* Toggle Menu Icon for smaller screens */}
+          <IoReorderThreeSharp
+            className={`md:hidden text-2xl cursor-pointer mx-4 my-2 md:my-0 ${
+              isMenuOpen ? 'text-red-800' : scrolled ? 'text-black hover:text-red-800' : 'text-white hover:text-red-800'
+            }`}
+            onClick={toggleMenu}
+          />
         </div>
 
         {/* Dropdown Menu for small screens */}
         {isMenuOpen && (
           <nav
-            className={`md:hidden flex space-y-2 bg-white p-4 absolute top-full left-0 w-full shadow-lg ${
-              scrolled ? 'text-black' : 'text-black'
-            }`}
+            className={`md:hidden flex space-y-2 bg-white p-4 absolute top-full left-0 w-full shadow-lg text-black`}
           >
             <Link
               to="/"
-              className="transition hover:duration-300 mx-4 my-2 md:my-0 hover:text-red-800"
+              className={`transition hover:duration-300 mx-4 my-2 md:my-0 ${
+                isActive('/') ? 'text-red-800' : 'hover:text-red-800'
+              }`}
               onClick={() => setIsMenuOpen(false)}
             >
               Home
             </Link>
             <Link
               to="/classes"
-              className="transition hover:duration-300 mx-4 my-2 md:my-0 hover:text-red-800"
+              className={`transition hover:duration-300 mx-4 my-2 md:my-0 ${
+                isActive('/classes') ? 'text-red-800' : 'hover:text-red-800'
+              }`}
               onClick={() => setIsMenuOpen(false)}
             >
               Classes
             </Link>
             <Link
               to="/bmi"
-              className="transition hover:duration-300 mx-4 my-2 md:my-0 hover:text-red-800"
+              className={`transition hover:duration-300 mx-4 my-2 md:my-0 ${
+                isActive('/bmi') ? 'text-red-800' : 'hover:text-red-800'
+              }`}
               onClick={() => setIsMenuOpen(false)}
             >
               BMI Calc
             </Link>
             <Link
               to="/about"
-              className="transition hover:duration-300 mx-4 my-2 md:my-0 hover:text-red-800"
+              className={`transition hover:duration-300 mx-4 my-2 md:my-0 ${
+                isActive('/about') ? 'text-red-800' : 'hover:text-red-800'
+              }`}
               onClick={() => setIsMenuOpen(false)}
             >
               About Us
             </Link>
             <Link
               to="/shop"
-              className="transition hover:duration-300 mx-4 my-2 md:my-0 hover:text-red-800"
+              className={`transition hover:duration-300 mx-4 my-2 md:my-0 ${
+                isActive('/shop') ? 'text-red-800' : 'hover:text-red-800'
+              }`}
               onClick={() => setIsMenuOpen(false)}
             >
               Shop
